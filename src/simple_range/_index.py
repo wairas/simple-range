@@ -114,6 +114,23 @@ class Index(object):
         return self._index
 
 
+def index_value(s, maximum, zero_based=True):
+    """
+    Convenience method to convert an index string into an integer.
+
+    :param s: the index string to parse/convert
+    :type s: str
+    :param maximum: the maximum number of elements
+    :type maximum: int
+    :param zero_based: whether to return 0-based or 1-based index
+    :type zero_based: bool
+    :return: the index
+    :rtype: int
+    """
+    i = Index(s, maximum=maximum)
+    return i.value(zero_based=zero_based)
+
+
 if __name__ == "__main__":
     r = Index("1", maximum=10)
     print(r, "-->", r.value())

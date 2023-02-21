@@ -205,6 +205,23 @@ class Range(object):
         return self._range
 
 
+def range_indices(s, maximum, zero_based=True):
+    """
+    Convenience method to convert a range string into a list of indices.
+    
+    :param s: the range string to parse/convert
+    :type s: str
+    :param maximum: the maximum number of elements
+    :type maximum: int
+    :param zero_based: whether to return 0-based or 1-based indices
+    :type zero_based: bool
+    :return: the list of indices
+    :rtype: list
+    """
+    r = Range(s, maximum=maximum)
+    return r.indices(zero_based=zero_based)
+
+
 if __name__ == "__main__":
     r = Range("1-3", maximum=10)
     print(r, "-->", r.indices())
