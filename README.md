@@ -1,6 +1,6 @@
 # simple-range
-Weka-inspired index range using human-readable 1-based indices and placeholders, 
-e.g.: `first-last`, `1-10,12,20-last`
+Weka-inspired index and range using human-readable 1-based indices and placeholders, 
+e.g.: `last`, `first-last`, `1-10,12,20-last`.
 
 Available placeholders:
 * `first` - the first index
@@ -40,4 +40,27 @@ Will generate this output:
 first-last --> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 first-3,11,14-14,30,last --> [0, 1, 2, 10, 13, 29, 39]
 first-3,11,14-14,30,last --> [1, 2, 3, 11, 14, 30, 40]
+```
+
+And this code:
+
+```python
+from simple_range import Index
+
+r = Index("1", maximum=10)
+print(r, "-->", r.value())
+r = Index("second", maximum=10)
+print(r, "-->", r.value(zero_based=False))
+r = Index("last", maximum=40)
+print(r, "-->", r.value())
+print(r, "-->", r.value(zero_based=False))
+```
+
+outputs this:
+
+```
+1 --> 0
+second --> 2
+last --> 39
+last --> 40
 ```
