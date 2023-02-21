@@ -230,3 +230,4 @@ if __name__ == "__main__":
     r = Range("first-3,11,14-14,30,last", maximum=40)
     print(r, "-->", r.indices())
     print(r, "-->", r.indices(zero_based=False))
+    print(range_indices("2-last_2", maximum=10))

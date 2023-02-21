@@ -139,3 +139,4 @@ if __name__ == "__main__":
     r = Index("last", maximum=40)
     print(r, "-->", r.value())
     print(r, "-->", r.value(zero_based=False))
+    print(index_value("last_1", maximum=100, zero_based=False))
