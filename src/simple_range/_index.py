@@ -1,5 +1,5 @@
 from simple_range._core import is_int, is_placeholder
-from simple_range._core import FIRST, SECOND, THIRD, LAST_2, LAST_1, LAST
+from simple_range._core import FIRST, SECOND, THIRD, LAST_2, LAST_1, LAST, PLACEHOLDERS
 
 
 class Index(object):
@@ -112,6 +112,17 @@ class Index(object):
         :rtype: str
         """
         return self._index
+
+    @classmethod
+    def help(cls):
+        """
+        Returns a short help string.
+
+        :return: the help string
+        :rtype: str
+        """
+        return "1-based index; available placeholders: " + ", ".join(PLACEHOLDERS) + "; " \
+               + LAST_1 + ": second to last, " + LAST_2 + ": third to last"
 
 
 def index_value(s, maximum, zero_based=True):

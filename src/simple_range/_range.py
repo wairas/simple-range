@@ -1,5 +1,5 @@
 from simple_range._core import is_int, is_placeholder
-from simple_range._core import FIRST, SECOND, THIRD, LAST_2, LAST_1, LAST
+from simple_range._core import FIRST, SECOND, THIRD, LAST_2, LAST_1, LAST, PLACEHOLDERS
 
 
 class SubRange(object):
@@ -203,6 +203,18 @@ class Range(object):
         :rtype: str
         """
         return self._range
+
+    @classmethod
+    def help(cls):
+        """
+        Returns a short help string.
+
+        :return: the help string
+        :rtype: str
+        """
+        return "1-based range, e.g., 'first-last' or '1-12,20,22,25-last'; " \
+               + "available placeholders: " + ", ".join(PLACEHOLDERS) + ";" \
+               + LAST_1 + ": second to last, " + LAST_2 + ": third to last"
 
 
 def range_indices(s, maximum, zero_based=True):

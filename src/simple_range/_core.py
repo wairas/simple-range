@@ -5,6 +5,14 @@ LAST = "last"
 LAST_1 = "last_1"
 LAST_2 = "last_2"
 ALL = FIRST + "-" + LAST
+PLACEHOLDERS = [
+    FIRST,
+    SECOND,
+    THIRD,
+    LAST_2,
+    LAST_1,
+    LAST,
+]
 
 
 def is_int(s):
