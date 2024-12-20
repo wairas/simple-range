@@ -14,7 +14,7 @@ Available placeholders:
 ## Installation
 
 ```
-pip install simple-range
+pip install simple_range
 ```
 
 ## Functionality

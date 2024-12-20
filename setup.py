@@ -13,7 +13,7 @@ def _read(f):
 
 
 setup(
-    name="simple-range",
+    name="simple_range",
     description="Weka-inspired index range using human-readable 1-based indices and placeholders (eg first/last).",
     long_description=(
         _read('DESCRIPTION.rst') + b'\n' +
